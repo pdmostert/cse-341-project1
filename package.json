@@ -19,7 +19,8 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "dotnet": "^1.1.4",
-    "express": "^5.2.1"
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "mongodb": "^7.0.0"
   }
 }
