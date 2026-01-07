@@ -1,6 +1,7 @@
 const mongodb = require("../data/database");
 const ObjectId = require("mongodb").ObjectId;
 
+// Get all contacts
 getAllContacts = async (req, res, next) => {
   try {
     const contacts = await mongodb.getDb().db().collection("contacts").find();
@@ -8,6 +9,25 @@ getAllContacts = async (req, res, next) => {
     res.status(200).json(contactsList);
   } catch (error) {
     res.status(500).json({ message: "Fetching contacts failed." });
+  }
+};
+
+// Get contact by ID
+getContactById = async (req, res, next) => {
+  try {
+    const contactId = new ObjectId(req.params.id);
+    const contact = await mongodb
+      .getDb()
+      .db()
+      .collection("contacts")
+      .findOne({ _id: contactId });
+    if (contact) {
+      res.status(200).json(contact);
+    } else {
+      res.status(404).json({ message: "Contact not found." });
+    }
+  } catch (error) {
+    res.status(500).json({ message: "Fetching contact failed." });
   }
 };
 
@@ -31,24 +51,6 @@ getAllContacts = async (req, res, next) => {
 //     res.status(500).json({ message: "Creating contact failed." });
 //   }
 // };
-
-getContactById = async (req, res, next) => {
-  try {
-    const contactId = new ObjectId(req.params.id);
-    const contact = await mongodb
-      .getDb()
-      .db()
-      .collection("contacts")
-      .findOne({ _id: contactId });
-    if (contact) {
-      res.status(200).json(contact);
-    } else {
-      res.status(404).json({ message: "Contact not found." });
-    }
-  } catch (error) {
-    res.status(500).json({ message: "Fetching contact failed." });
-  }
-};
 
 // updateContact = async (req, res, next) => {
 //   try {
