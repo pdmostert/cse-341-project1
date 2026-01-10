@@ -5,10 +5,9 @@
     "description": "API Documentation for CSE 341 Project",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "cse-341-project1-gpbh.onrender.com",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
