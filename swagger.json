@@ -165,19 +165,6 @@
           }
         }
       }
-    },
-    "/swagger/api-docs": {
-      "get": {
-        "tags": [
-          "Swagger"
-        ],
-        "description": "Endpoint to serve Swagger API documentation.",
-        "responses": {
-          "default": {
-            "description": ""
-          }
-        }
-      }
     }
   },
   "definitions": {

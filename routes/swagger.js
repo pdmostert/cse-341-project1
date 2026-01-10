@@ -6,7 +6,6 @@ router.use("/api-docs", swaggerUi.serve);
 router.get(
   "/api-docs",
   swaggerUi.setup(swaggerDocument),
-  // #swagger.tags = ['Swagger']
-  // #swagger.description = 'Endpoint to serve Swagger API documentation.'
+  // #swagger.ignore = true
 );
 module.exports = router;
