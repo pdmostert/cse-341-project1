@@ -8,12 +8,16 @@
   "host": "localhost:3000",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
       "get": {
-        "description": "",
+        "tags": [
+          "Home"
+        ],
+        "description": "Endpoint to return a welcome message.",
         "responses": {
           "200": {
             "description": "OK"
@@ -57,7 +61,7 @@
             "description": "Contact information",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/CreateContact"
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
@@ -120,7 +124,7 @@
             "description": "Updated contact information",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/CreateContact"
+              "$ref": "#/definitions/Contact"
             }
           }
         ],
@@ -165,7 +169,10 @@
     },
     "/swagger/api-docs": {
       "get": {
-        "description": "",
+        "tags": [
+          "Swagger"
+        ],
+        "description": "Endpoint to serve Swagger API documentation.",
         "responses": {
           "default": {
             "description": ""
@@ -198,100 +205,6 @@
                 }
               }
             },
-            "firstName": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "example": "string"
-                },
-                "example": {
-                  "type": "string",
-                  "example": "John"
-                }
-              }
-            },
-            "lastName": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "example": "string"
-                },
-                "example": {
-                  "type": "string",
-                  "example": "Doe"
-                }
-              }
-            },
-            "email": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "example": "string"
-                },
-                "example": {
-                  "type": "string",
-                  "example": "john.doe@example.com"
-                }
-              }
-            },
-            "favoriteColor": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "example": "string"
-                },
-                "example": {
-                  "type": "string",
-                  "example": "blue"
-                }
-              }
-            },
-            "birthday": {
-              "type": "object",
-              "properties": {
-                "type": {
-                  "type": "string",
-                  "example": "string"
-                },
-                "format": {
-                  "type": "string",
-                  "example": "date"
-                },
-                "example": {
-                  "type": "string",
-                  "example": "1990-01-01"
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "CreateContact": {
-      "type": "object",
-      "properties": {
-        "type": {
-          "type": "string",
-          "example": "object"
-        },
-        "required": {
-          "type": "array",
-          "example": [
-            "firstName",
-            "lastName",
-            "email"
-          ],
-          "items": {
-            "type": "string"
-          }
-        },
-        "properties": {
-          "type": "object",
-          "properties": {
             "firstName": {
               "type": "object",
               "properties": {

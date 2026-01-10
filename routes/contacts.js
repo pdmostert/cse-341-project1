@@ -26,7 +26,7 @@ router.post(
   contactsController.createContact,
   // #swagger.tags = ['Contacts']
   // #swagger.description = 'Create a new contact'
-  // #swagger.parameters['body'] = { in: 'body', description: 'Contact information', required: true, schema: { $ref: '#/definitions/CreateContact' } }
+  // #swagger.parameters['body'] = { in: 'body', description: 'Contact information', required: true, schema: { $ref: '#/definitions/Contact' } }
   // #swagger.responses[201] = { description: 'Contact created successfully' }
   // #swagger.responses[500] = { description: 'Failed to create contact' }
 );
@@ -37,7 +37,7 @@ router.put(
   // #swagger.tags = ['Contacts']
   // #swagger.description = 'Update an existing contact'
   // #swagger.parameters['id'] = { in: 'path', description: 'Contact ID', required: true, type: 'string' }
-  // #swagger.parameters['body'] = { in: 'body', description: 'Updated contact information', required: true, schema: { $ref: '#/definitions/CreateContact' } }
+  // #swagger.parameters['body'] = { in: 'body', description: 'Updated contact information', required: true, schema: { $ref: '#/definitions/Contact' } }
   // #swagger.responses[200] = { description: 'Contact updated successfully' }
   // #swagger.responses[404] = { description: 'Contact not found' }
 );
