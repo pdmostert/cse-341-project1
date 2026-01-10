@@ -6,4 +6,31 @@ GET https://cse-341-project1-gpbh.onrender.com/contacts/695b95837d0c5a3f4db4ef88
 
 ###
 
+POST https://cse-341-project1-gpbh.onrender.com/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+    "lastName": "Doe",
+  "email": "john.doe@example.com",
+    "favoriteColor": "Blue",
+    "birthday": "1990-01-01"
+}
+
+###
+
+PUT https://cse-341-project1-gpbh.onrender.com/contacts/695b95837d0c5a3f4db4ef88
+Content-Type: application/json
+
+{
+  "firstName": "Jane",
+    "lastName": "Doe",
+  "email": "jane.doe@example.com",
+    "favoriteColor": "Red",
+    "birthday": "1992-02-02"
+}
+###
+
+DELETE https://cse-341-project1-gpbh.onrender.com/contacts/695b95837d0c5a3f4db4ef88
+###
 
